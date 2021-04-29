@@ -2,7 +2,6 @@ public class Forme {
     private int forme;
     private String couleur;
 
-
     public Forme(int forme, String couleur) {
         this.forme = forme;
         this.couleur = couleur;
@@ -26,16 +25,16 @@ public class Forme {
 
     @Override
     public String toString() {
-        if (getForme()==0){
-            return "(Forme: triangle, Couleur: "+getCouleur()+")";
+        if (this.getForme()==0){
+            return "(Forme: triangle, Couleur: "+this.getCouleur()+")";
         }
-        if (getForme()==1){
-            return "(Forme: carree, Couleur: "+getCouleur()+")";
+        if (this.getForme()==1){
+            return "(Forme: carree, Couleur: "+this.getCouleur()+")";
         }
-        if (getForme()==2){
-            return "(Forme: losange, Couleur: "+getCouleur()+")";
+        if (this.getForme()==2){
+            return "(Forme: losange, Couleur: "+this.getCouleur()+")";
         }
-        if (getForme()==3){
+        if (this.getForme()==3){
             return "(Forme: vide"+")";
         }
         return "";
