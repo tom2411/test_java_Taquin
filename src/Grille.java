@@ -3,17 +3,17 @@ import java.util.List;
 
 public class Grille {
     // 0: triangle, 1: carré, 2: losange, 3: vide
-    private final List<Integer> list_formes;
-    private final List<List<Integer>> grille;
+    private final List<Forme> list_formes;
+    private final List<List<Forme>> grille;
     private final static int NB_LIG =3;
     private final static int NB_COL =3;
 
-    public Grille(List<Integer> list_formes) {
+    public Grille(List<Forme> list_formes) {
         this.list_formes = list_formes;
         this.grille = new ArrayList<>();
         int nb_elem = 0;
         for (int i = 0; i < NB_LIG; i++) {
-            List<Integer> lig = new ArrayList<>();
+            List<Forme> lig = new ArrayList<>();
             for (int j = 0; j < NB_COL; j++) {
                 lig.add(list_formes.get(nb_elem));
                 nb_elem++;
@@ -22,7 +22,7 @@ public class Grille {
         }
     }
 
-    public List<List<Integer>> getGrille() {
+    public List<List<Forme>> getGrille() {
         return grille;
     }
 
@@ -30,7 +30,7 @@ public class Grille {
         Coordonnees res = new Coordonnees();
         for (int i = 0; i < NB_LIG; i++) {
             for (int j = 0; j < NB_COL; j++) {
-                if (this.grille.get(i).get(j)==3){
+                if (this.grille.get(i).get(j).getForme()==3){
                     res.setLig(i);
                     res.setCol(j);
                     return res;
@@ -89,7 +89,8 @@ public class Grille {
     }
 
     public boolean isFinal(){
-
+        //TODO savoir si la grille est finale ou pas
+        return false;
     }
 
 }
