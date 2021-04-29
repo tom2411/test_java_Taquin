@@ -1,4 +1,3 @@
-import java.nio.charset.CoderResult;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,8 +31,8 @@ public class Grille {
         for (int i = 0; i < NB_LIG; i++) {
             for (int j = 0; j < NB_COL; j++) {
                 if (this.grille.get(i).get(j)==3){
-                    res.setElem1(i);
-                    res.setElem2(j);
+                    res.setLig(i);
+                    res.setCol(j);
                     return res;
                 }
             }
@@ -44,49 +43,53 @@ public class Grille {
     public List<Coordonnees> getCaseVoisine(){
         Coordonnees caseVide = getCaseVide();
         List<Coordonnees> liste_case_voisine = new ArrayList<>();
-        if (caseVide.getElem1()==0 && caseVide.getElem2()==0){
+        if (caseVide.getLig()==0 && caseVide.getCol()==0){
             liste_case_voisine.add(new Coordonnees(0,1));
             liste_case_voisine.add(new Coordonnees(1,0));
         }
-        if (caseVide.getElem1()==0 && caseVide.getElem2()==1){
+        if (caseVide.getLig()==0 && caseVide.getCol()==1){
             liste_case_voisine.add(new Coordonnees(0,0));
             liste_case_voisine.add(new Coordonnees(1,1));
             liste_case_voisine.add(new Coordonnees(0,2));
         }
-        if (caseVide.getElem1()==0 && caseVide.getElem2()==2){
+        if (caseVide.getLig()==0 && caseVide.getCol()==2){
             liste_case_voisine.add(new Coordonnees(1,2));
             liste_case_voisine.add(new Coordonnees(0,1));
         }
-        if (caseVide.getElem1()==1 && caseVide.getElem2()==0){
+        if (caseVide.getLig()==1 && caseVide.getCol()==0){
             liste_case_voisine.add(new Coordonnees(0,0));
             liste_case_voisine.add(new Coordonnees(1,1));
             liste_case_voisine.add(new Coordonnees(2,0));
         }
-        if (caseVide.getElem1()==1 && caseVide.getElem2()==1){
+        if (caseVide.getLig()==1 && caseVide.getCol()==1){
             liste_case_voisine.add(new Coordonnees(1,0));
             liste_case_voisine.add(new Coordonnees(0,1));
             liste_case_voisine.add(new Coordonnees(1,2));
             liste_case_voisine.add(new Coordonnees(2,0));
         }
-        if (caseVide.getElem1()==1 && caseVide.getElem2()==2){
+        if (caseVide.getLig()==1 && caseVide.getCol()==2){
             liste_case_voisine.add(new Coordonnees(1,1));
             liste_case_voisine.add(new Coordonnees(0,2));
             liste_case_voisine.add(new Coordonnees(2,2));
         }
-        if (caseVide.getElem1()==2 && caseVide.getElem2()==0){
+        if (caseVide.getLig()==2 && caseVide.getCol()==0){
             liste_case_voisine.add(new Coordonnees(1,0));
             liste_case_voisine.add(new Coordonnees(2,1));
         }
-        if (caseVide.getElem1()==2 && caseVide.getElem2()==1){
+        if (caseVide.getLig()==2 && caseVide.getCol()==1){
             liste_case_voisine.add(new Coordonnees(1,1));
             liste_case_voisine.add(new Coordonnees(2,2));
             liste_case_voisine.add(new Coordonnees(2,0));
         }
-        if (caseVide.getElem1()==2 && caseVide.getElem2()==2){
+        if (caseVide.getLig()==2 && caseVide.getCol()==2){
             liste_case_voisine.add(new Coordonnees(1,2));
             liste_case_voisine.add(new Coordonnees(2,1));
         }
         return liste_case_voisine;
+    }
+
+    public boolean isFinal(){
+
     }
 
 }
